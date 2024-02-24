@@ -10,7 +10,12 @@ function generateProductHTML(product: Product): string {
 }
 
 function renderProducts(prods: Product[]): void {
-    // your code
+    const mainContainer = document.getElementById("main-container");
+    for(const p of prods) {
+        const pStr = generateProductHTML(p)
+        let frag = document.createRange().createContextualFragment(pStr);
+        mainContainer?.appendChild(frag);
+    }
 }
 
 function getByCategory(category: string): void {
