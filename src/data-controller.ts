@@ -11,6 +11,7 @@ function generateProductHTML(product: Product): string {
 
 function renderProducts(prods: Product[]): void {
     const mainContainer = document.getElementById("main-container");
+    if(mainContainer) mainContainer.innerHTML = ""; //clear already rendered
     for(const p of prods) {
         const pStr = generateProductHTML(p)
         let frag = document.createRange().createContextualFragment(pStr);
@@ -19,7 +20,9 @@ function renderProducts(prods: Product[]): void {
 }
 
 function getByCategory(category: string): void {
-    // your code
+    const prods = products.filter((p) => p.category === category);
+    renderProducts(prods);
+    console.log("getByCategory");
 }
 
 function getByRating(minRating: number): void {

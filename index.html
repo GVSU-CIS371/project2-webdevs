@@ -30,7 +30,17 @@
         renderProducts(products);
 
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
+        const categories = [
+          document.getElementById("electronics"),
+          document.getElementById("clothing"),
+          document.getElementById("groceries"),
+        ];
 
+        for (const cat of categories) {
+          cat.addEventListener("click", function () {getByCategory(cat.innerText)});
+        }
+        const bestSeller = document.getElementById("bestSeller"); // not a category, so done separately
+        bestSeller.addEventListener("click", getByRating(4.5));
         // - "Electronics" should display all products categorized as "Electronics."
         // - "Clothing" should display all products categorized as "Clothing."
         // - "Groceries" should display all products categorized as "Groceries."
