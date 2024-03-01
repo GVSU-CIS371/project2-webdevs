@@ -40,7 +40,7 @@
           cat.addEventListener("click", function () {getByCategory(cat.innerText)});
         }
         const bestSeller = document.getElementById("bestSeller"); // not a category, so done separately
-        bestSeller.addEventListener("click", getByRating(4.5));
+        bestSeller.addEventListener("click", function() { getByRating(4.5) });
         // - "Electronics" should display all products categorized as "Electronics."
         // - "Clothing" should display all products categorized as "Clothing."
         // - "Groceries" should display all products categorized as "Groceries."
